@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 
 // 自动登录，页面跳转
 Future<Widget> login() async {
-  return login();
+  return Login();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String name = prefs.get("user_name");
   String password = prefs.get("user_password");
@@ -25,7 +25,7 @@ class Login extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(top: 100, bottom: 10),
               child: Text(
-                'XIYU',
+                'XIYU2',
                 style: TextStyle(
                     color: Color.fromARGB(255, 53, 53, 53), fontSize: 50.0),
               ),
