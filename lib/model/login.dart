@@ -34,7 +34,7 @@ class User {
   String Password;
   bool IsRememberMe;
 
-  User(this.Account, this.Password, this.IsRememberMe);
+  User(this.Account, this.Password, {this.IsRememberMe = true});
 
   Future<Login> post() async {
     var dio = Dio();

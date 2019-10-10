@@ -19,7 +19,7 @@ void main() {
   });
 
   test("user post", () async {
-    var user = User("xx", "xx", true);
+    var user = User("xx", "xx");
     var login = await user.post();
     expect(login.toJson().toString(), "{Status: 1, StatusCode: 0, Msg: 您的帐号不存在，请查证后再次尝试登录！, ErrorObj: null, ResultObj: null}");
   });

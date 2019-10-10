@@ -39,7 +39,7 @@ Map<String, dynamic> _$_ResultObjToJson(_ResultObj instance) =>
 
 User _$UserFromJson(Map<String, dynamic> json) {
   return User(json['Account'] as String, json['Password'] as String,
-      json['IsRememberMe'] as bool);
+      IsRememberMe: json['IsRememberMe'] as bool);
 }
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
