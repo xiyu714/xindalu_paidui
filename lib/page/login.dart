@@ -69,12 +69,24 @@ class _Login extends State<Login> {
             }
         ));
       } else {
+        showDialog(
+          context: context,
+          barrierDismissible: true,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("登录错误"),
+              content: Text(response.Msg),
+              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            );
+          }
+        );
         print(response.Msg);
       }
     }
   }
 
   Widget build(BuildContext context) {
+    debugPrint("Login build");
     return Scaffold(
         body: Column(
           children: <Widget>[
