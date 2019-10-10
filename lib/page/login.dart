@@ -4,12 +4,12 @@ import 'package:provider/provider.dart';
 
 // 自动登录，页面跳转
 Future<Widget> login() async {
-  return Login();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String name = prefs.get("user_name");
   String password = prefs.get("user_password");
-  if (name?.isEmpty) {
+  if (name == null || name.isEmpty) {
     // 没有保存密码
+    return Login();
   } else {
     // 对保存的密码进行验证
     return Login();
