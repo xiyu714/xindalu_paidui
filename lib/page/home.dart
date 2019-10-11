@@ -35,7 +35,9 @@ class _Home extends State<Home> {
                           borderRadius: BorderRadius.circular(45),
 
                         ),
-                        child: Text("20"),
+                        child: Center(
+                          child: Text('re'),
+                        ),
                       ),
                     ),
                   ],
