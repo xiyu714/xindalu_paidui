@@ -57,7 +57,7 @@ class Paidui_history {
       "Method": 1,
       "TimeAgo": 5,
     });
-    //print(response);
+    print(response);
     return Paidui_history.fromJson(response.data);
   }
 
