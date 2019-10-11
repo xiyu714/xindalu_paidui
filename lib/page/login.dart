@@ -20,6 +20,7 @@ Future<Widget> login() async {
     model_login.Login response = await user.post();
     if(response.Status == 0) {
       print("自动登录成功");
+      AccessToken = response.ResultObj.AccessToken;
       return Home();
     } else {
       print(response.Msg);

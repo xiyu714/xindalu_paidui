@@ -22,5 +22,12 @@ class NowPaidui with ChangeNotifier {
         notifyListeners();
       }
     });
+
+    run_once();
+  }
+
+  run_once() async {
+    this.paidui = await Paidui.post();
+    notifyListeners();
   }
 }
