@@ -25,6 +25,7 @@ class _Home extends State<Home> {
                     Container(
                       width: 90,
                       height: 90,
+                      margin: EdgeInsets.only(top: 20),
                       //alignment: Alignment.center,
 
                       child: DecoratedBox(
@@ -47,8 +48,26 @@ class _Home extends State<Home> {
                 margin: EdgeInsets.all(40),
                 child: Column(
                   children: <Widget>[
-                    Text("当前排队人数"),
+                    Text("预计等待时间"),
+                    Container(
+                      width: 90,
+                      height: 90,
+                      margin: EdgeInsets.only(top: 20),
+                      //alignment: Alignment.center,
 
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              style: BorderStyle.solid
+                          ),
+                          borderRadius: BorderRadius.circular(45),
+
+                        ),
+                        child: Center(
+                          child: Text('re'),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
