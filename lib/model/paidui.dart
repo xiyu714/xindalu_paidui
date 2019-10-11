@@ -74,6 +74,7 @@ class _ResultObj_history {
   Map<String, dynamic> toJson() => _$_ResultObj_historyToJson(this);
 }
 
+@JsonSerializable()
 class _PointDTO {
   int Value;
   String RecordTime;
