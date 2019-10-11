@@ -52,11 +52,11 @@ class _Home extends State<Home> {
             ],
           ),
           OutlineButton(
-            child: Text("hello"),
+            child: Text("查看排队最新进展"),
             onPressed: () {},
           ),
           OutlineButton(
-            child: Text("hello"),
+            child: Text("查看历史数据"),
             onPressed: () {},
           ),
         ],
