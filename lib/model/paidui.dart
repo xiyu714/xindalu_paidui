@@ -68,7 +68,13 @@ class Paidui_history {
 @JsonSerializable()
 class _ResultObj_history {
   _ResultObj_history();
+  List<_PointDTO> PointDTO;  // 对应ResultObj -> DataPoints -> 第一个对象 -> PointDTO
 
   factory _ResultObj_history.fromJson(Map<String, dynamic> json) => _$_ResultObj_historyFromJson(json);
   Map<String, dynamic> toJson() => _$_ResultObj_historyToJson(this);
+}
+
+class _PointDTO {
+  int Value;
+  String RecordTime;
 }
