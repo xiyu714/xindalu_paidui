@@ -9,6 +9,58 @@ class _Home extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           title: Text("主页"),
-    ));
+        ),
+      body: Column(
+
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(40),
+                child: Column(
+                  children: <Widget>[
+                    Text("当前排队人数"),
+                    Container(
+                      width: 90,
+                      height: 90,
+                      //alignment: Alignment.center,
+
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            style: BorderStyle.solid
+                          ),
+                          borderRadius: BorderRadius.circular(45),
+
+                        ),
+                        child: Text("20"),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(40),
+                child: Column(
+                  children: <Widget>[
+                    Text("当前排队人数"),
+
+                  ],
+                ),
+              ),
+            ],
+          ),
+          OutlineButton(
+            child: Text("hello"),
+            onPressed: () {},
+          ),
+          OutlineButton(
+            child: Text("hello"),
+            onPressed: () {},
+          ),
+        ],
+      ),
+    );
   }
 }
