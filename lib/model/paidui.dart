@@ -115,10 +115,21 @@ class Paidui_history {
 @JsonSerializable()
 class _ResultObj_history {
   _ResultObj_history();
+  @JsonKey(
+    name: "DataPoints",
+    fromJson: _PointDTOFromJson,
+  )
   List<_PointDTO> PointDTO;  // 对应ResultObj -> DataPoints -> 第一个对象 -> PointDTO
 
   factory _ResultObj_history.fromJson(Map<String, dynamic> json) => _$_ResultObj_historyFromJson(json);
   Map<String, dynamic> toJson() => _$_ResultObj_historyToJson(this);
+
+  static List<_PointDTO> _PointDTOFromJson(json) {
+    return (json[0]["PointDTO"] as List)
+        .map((e) => _PointDTO.fromJson(e as Map<String, dynamic>))
+        .toList();
+    //print("get: ${json[0]["PointDTO"]}");
+  }
 }
 
 @JsonSerializable()
