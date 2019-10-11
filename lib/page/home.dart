@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'paidui_history.dart';
 
 class Home extends StatefulWidget {
   _Home createState() => _Home();
@@ -67,7 +68,13 @@ class _Home extends State<Home> {
             child: SizedBox.expand(
               child: OutlineButton(
                 child: Text("查看历史数据"),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return SimpleTimeSeriesChart.withSampleData();
+                    }
+                  ));
+                },
               ),
             ),
           ),
