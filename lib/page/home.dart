@@ -83,7 +83,7 @@ class T extends StatelessWidget {
 
                       ),
                       child: Center(
-                        child: Text('re'),
+                        child: Text('${(Provider.of<NowPaidui>(context).paidui?.ResultObj?.Value??0)*2}'),
                       ),
                     ),
                   ),
@@ -98,7 +98,9 @@ class T extends StatelessWidget {
           child: SizedBox.expand(
             child: OutlineButton(
               child: Text("查看排队最新进展"),
-              onPressed: () {},
+              onPressed: () {
+                Provider.of<NowPaidui>(context).run_once();
+              },
             ),
           ),
         ),
