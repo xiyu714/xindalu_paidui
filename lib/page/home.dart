@@ -51,13 +51,25 @@ class _Home extends State<Home> {
               ),
             ],
           ),
-          OutlineButton(
-            child: Text("查看排队最新进展"),
-            onPressed: () {},
+          Container(
+            height: 45,
+            margin: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+            child: SizedBox.expand(
+              child: OutlineButton(
+                child: Text("查看排队最新进展"),
+                onPressed: () {},
+              ),
+            ),
           ),
-          OutlineButton(
-            child: Text("查看历史数据"),
-            onPressed: () {},
+          Container(
+            height: 45,
+            margin: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+            child: SizedBox.expand(
+              child: OutlineButton(
+                child: Text("查看历史数据"),
+                onPressed: () {},
+              ),
+            ),
           ),
         ],
       ),
