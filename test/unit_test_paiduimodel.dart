@@ -20,7 +20,7 @@ void main() {
       await util_login();
 
      var history = await Paidui_history.post();
-     print("history: ${jsonEncode(history)}");
+     print("history: ${jsonEncode(history.ResultObj.PointDTO)}");
     });
   });
 }

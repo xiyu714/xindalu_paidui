@@ -57,7 +57,6 @@ class Paidui_history {
       "Method": 1,
       "TimeAgo": 60,  // 想设为5分钟，为了方便调试先设为60
     });
-    print(response.data);
     return Paidui_history.fromJson(response.data);
   }
 
