@@ -17,7 +17,9 @@ void main() {
   });
   group("历史数据测试", () {
     test("历史数据get", () async {
+      await util_login();
 
+      await Paidui_history.post();
     });
   });
 }
