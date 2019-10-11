@@ -54,8 +54,23 @@ Map<String, dynamic> _$Paidui_historyToJson(Paidui_history instance) =>
     };
 
 _ResultObj_history _$_ResultObj_historyFromJson(Map<String, dynamic> json) {
-  return _ResultObj_history();
+  return _ResultObj_history()
+    ..PointDTO = (json['PointDTO'] as List)
+        ?.map((e) =>
+            e == null ? null : _PointDTO.fromJson(e as Map<String, dynamic>))
+        ?.toList();
 }
 
 Map<String, dynamic> _$_ResultObj_historyToJson(_ResultObj_history instance) =>
-    <String, dynamic>{};
+    <String, dynamic>{'PointDTO': instance.PointDTO};
+
+_PointDTO _$_PointDTOFromJson(Map<String, dynamic> json) {
+  return _PointDTO()
+    ..Value = json['Value'] as int
+    ..RecordTime = json['RecordTime'] as String;
+}
+
+Map<String, dynamic> _$_PointDTOToJson(_PointDTO instance) => <String, dynamic>{
+      'Value': instance.Value,
+      'RecordTime': instance.RecordTime
+    };

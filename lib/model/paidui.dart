@@ -95,6 +95,22 @@ class Paidui_history {
   ErrorObj: null
 }
  */
+/* 当没有数据时
+{
+  ResultObj: {
+    PageCount: 1,
+    PageIndex: 1,
+    RecordCount: 0,
+    Count: 0,
+    DeviceId: 44443,
+    DataPoints: null
+  },
+  Status: 0,
+  StatusCode: 0,
+  Msg: null,
+  ErrorObj: null
+}
+ */
 
 @JsonSerializable()
 class _ResultObj_history {
@@ -109,4 +125,8 @@ class _ResultObj_history {
 class _PointDTO {
   int Value;
   String RecordTime;
+
+  _PointDTO();
+  factory _PointDTO.fromJson(Map<String, dynamic> json) => _$_PointDTOFromJson(json);
+  Map<String, dynamic> toJson() => _$_PointDTOToJson(this);
 }

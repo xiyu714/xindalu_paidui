@@ -19,7 +19,8 @@ void main() {
     test("历史数据get", () async {
       await util_login();
 
-      await Paidui_history.post();
+     var history = await Paidui_history.post();
+     print("history: ${history.toJson()}");
     });
   });
 }
