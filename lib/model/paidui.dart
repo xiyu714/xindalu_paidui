@@ -65,6 +65,37 @@ class Paidui_history {
   Map<String, dynamic> toJson() => _$Paidui_historyToJson(this);
 }
 
+/* 当历史数据只有两条时
+{
+  ResultObj: {
+    PageCount: 1,
+    PageIndex: 1,
+    RecordCount: 2,
+    Count: 2,
+    DeviceId: 44443,
+    DataPoints: [
+      {
+        ApiTag: number_down,
+        PointDTO: [
+          {
+            Value: 7,
+            RecordTime: 2019-10-1121: 48: 50
+          },
+          {
+            Value: 8,
+            RecordTime: 2019-10-1121: 48: 45
+          }
+        ]
+      }
+    ]
+  },
+  Status: 0,
+  StatusCode: 0,
+  Msg: null,
+  ErrorObj: null
+}
+ */
+
 @JsonSerializable()
 class _ResultObj_history {
   _ResultObj_history();
