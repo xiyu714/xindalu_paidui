@@ -1,4 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:paidui_xitong/model/cmd.dart';
 import 'utils.dart';
 
 import 'package:paidui_xitong/model/lock.dart';
@@ -11,6 +12,15 @@ void main() {
       await util_login();
 
       var data = await Lock.post(2);
+      print(jsonEncode(data));
+    });
+  });
+
+  group("cmd 相关", () {
+    test("lock", () async {
+      await util_login();
+
+      var data = await Cmd.post(44443, "lock", "黄nb");
       print(jsonEncode(data));
     });
   });
