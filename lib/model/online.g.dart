@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'cmd.dart';
+part of 'online.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Cmd _$CmdFromJson(Map<String, dynamic> json) {
-  return Cmd()
+Online _$OnlineFromJson(Map<String, dynamic> json) {
+  return Online()
     ..Status = json['Status'] as int
     ..StatusCode = json['StatusCode'] as int
     ..Msg = json['Msg'] as String
@@ -15,7 +15,7 @@ Cmd _$CmdFromJson(Map<String, dynamic> json) {
     ..ResultObj = json['ResultObj'];
 }
 
-Map<String, dynamic> _$CmdToJson(Cmd instance) => <String, dynamic>{
+Map<String, dynamic> _$OnlineToJson(Online instance) => <String, dynamic>{
       'Status': instance.Status,
       'StatusCode': instance.StatusCode,
       'Msg': instance.Msg,

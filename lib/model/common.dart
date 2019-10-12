@@ -6,5 +6,5 @@ abstract class Common_response {
   int StatusCode;
   String Msg;
   var ErrorObj;
-  String ResultObj;
+  var ResultObj;
 }
