@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:paidui_xitong/state/now_paidui.dart';
-import 'paidui_history.dart';
+import 'package:paidui_xitong/page/paidui_history.dart';
 
 class Home extends StatefulWidget {
   _Home createState() => _Home();
@@ -113,7 +113,7 @@ class T extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
-                      return SimpleTimeSeriesChart.withSampleData();
+                      return Paidui_history();
                     }
                 ));
               },

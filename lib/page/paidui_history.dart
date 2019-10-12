@@ -2,6 +2,17 @@
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 
+class Paidui_history extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("历史数据"),
+      ) ,
+      body: SimpleTimeSeriesChart.withSampleData(),
+    );
+  }
+}
+
 class SimpleTimeSeriesChart extends StatelessWidget {
   final List<charts.Series> seriesList;
   final bool animate;
