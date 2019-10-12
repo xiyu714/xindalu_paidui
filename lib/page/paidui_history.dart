@@ -9,6 +9,13 @@ class Paidui_history extends StatelessWidget {
   init_async() async {
     history = await model_paidui.Paidui_history.post();
   }
+
+  getData() async* {
+    while(true){
+      yield await init_async();
+      await Future.delayed(Duration(seconds: 1));
+    }
+  }
   Widget build(BuildContext context) {
     final data = [
       new TimeSeriesSales(DateTime.parse("2012-02-27 13:27:00"), 5),
@@ -22,8 +29,8 @@ class Paidui_history extends StatelessWidget {
       appBar: AppBar(
         title: Text("历史数据"),
       ) ,
-      body: FutureBuilder(
-        future: this.init_async(),
+      body: StreamBuilder(
+        stream: this.getData(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if(snapshot.connectionState == ConnectionState.done) {
             var data = this.history.ResultObj.PointDTO.map((pointdata) {
