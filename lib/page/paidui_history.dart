@@ -1,8 +1,14 @@
 /// Timeseries chart example
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:paidui_xitong/model/paidui.dart' as model_paidui;
 import 'package:flutter/material.dart';
 
 class Paidui_history extends StatelessWidget {
+  model_paidui.Paidui_history history;
+
+  init_async() async {
+    history = await model_paidui.Paidui_history.post();
+  }
   Widget build(BuildContext context) {
     final data = [
       new TimeSeriesSales(DateTime.parse("2012-02-27 13:27:00"), 5),
@@ -16,7 +22,21 @@ class Paidui_history extends StatelessWidget {
       appBar: AppBar(
         title: Text("历史数据"),
       ) ,
-      body: SimpleTimeSeriesChart.test(get_Series(data)),
+      body: FutureBuilder(
+        future: this.init_async(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if(snapshot.connectionState == ConnectionState.done) {
+            var data = this.history.ResultObj.PointDTO.map((pointdata) {
+              //print("${pointdata.RecordTime}   ${pointdata.Value}");
+              return TimeSeriesSales(DateTime.parse(pointdata.RecordTime), pointdata.Value);
+            }).toList();
+            return SimpleTimeSeriesChart.test(get_Series(data));
+          } else {
+            return Text("正在加载中");
+          }
+        },
+      )
+      //body: SimpleTimeSeriesChart.test(get_Series(data)),
     );
   }
 }
