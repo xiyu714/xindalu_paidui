@@ -85,8 +85,9 @@ test() {
   final data = [
     new TimeSeriesSales(new DateTime(2017, 9, 19), 5),
     new TimeSeriesSales(new DateTime(2017, 9, 26), 25),
-    new TimeSeriesSales(new DateTime(2017, 9, 26), 25),
+    new TimeSeriesSales(new DateTime(2017, 9, 27), 25),
     new TimeSeriesSales(new DateTime(2017, 10, 3), 100),
+    new TimeSeriesSales(new DateTime(2017, 10, 6), 100),
     new TimeSeriesSales(new DateTime(2017, 10, 10), 75),
   ];
 
