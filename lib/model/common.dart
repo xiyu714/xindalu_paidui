@@ -6,5 +6,5 @@ abstract class Common_response {
   int StatusCode;
   String Msg;
   var ErrorObj;
-  var ResultObj;
+  var ResultObj;  // 这里设为var，因为比如在命令api中，它是String类型
 }
