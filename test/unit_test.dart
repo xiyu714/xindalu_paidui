@@ -20,7 +20,7 @@ void main() {
     test("cmd", () async {
       await util_login();
 
-      var data = await Cmd.post(44443, "lock", "黄nb");
+      var data = await Cmd.post(44443, "string_play", "\"黄nb\"");
       print(jsonEncode(data));
     });
   });
