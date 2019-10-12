@@ -32,7 +32,7 @@ class Paidui_history extends StatelessWidget {
       body: StreamBuilder(
         stream: this.getData(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if(snapshot.connectionState == ConnectionState.done) {
+          if(snapshot.connectionState == ConnectionState.active) {
             var data = this.history.ResultObj.PointDTO.map((pointdata) {
               //print("${pointdata.RecordTime}   ${pointdata.Value}");
               return TimeSeriesSales(DateTime.parse(pointdata.RecordTime), pointdata.Value);
