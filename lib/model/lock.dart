@@ -12,7 +12,7 @@ class Lock {
   String ResultObj;
   Lock();
 
-  static Future<Lock> post() async {
+  static Future<Lock> post(var data) async {
     var dio = Dio(BaseOptions(
         headers: {
           "AccessToken": AccessToken,
@@ -22,7 +22,7 @@ class Lock {
       "deviceId": 44443,
       "apiTag": "lock",  // 想设为5分钟，为了方便调试先设为60
     },
-    data: 1);
+    data: data);
     return Lock.fromJson(response.data);
   }
 

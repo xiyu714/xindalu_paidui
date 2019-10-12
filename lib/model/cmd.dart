@@ -4,6 +4,7 @@ import 'package:paidui_xitong/global.dart';
 import 'package:paidui_xitong/model/common.dart';
 part 'cmd.g.dart';
 
+// 做为更为通用的发送数据
 @JsonSerializable()
 class Cmd with Common_response {
   Cmd();

@@ -9,7 +9,7 @@ void main() {
     test("lock", () async {
       await util_login();
 
-      var data = await Lock.post();
+      var data = await Lock.post(2);
       print(jsonEncode(data));
     });
   });
