@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:paidui_xitong/state/now_paidui.dart';
 import 'package:paidui_xitong/page/paidui_history.dart';
+import 'package:paidui_xitong/model/lock.dart';
 
 class Home extends StatefulWidget {
   _Home createState() => _Home();
@@ -143,6 +144,11 @@ class _SwitchAndCheckBoxTestRouteState extends State<SwitchAndCheckBoxTestRoute>
           onChanged:(value){
             //重新构建页面
             setState(() {
+              if(value == true) {
+                Lock.open();
+              } else {
+                Lock.close();
+              }
               _switchSelected=value;
             });
           },
