@@ -17,7 +17,7 @@ void main() {
   });
 
   group("cmd 相关", () {
-    test("lock", () async {
+    test("cmd", () async {
       await util_login();
 
       var data = await Cmd.post(44443, "lock", "黄nb");
