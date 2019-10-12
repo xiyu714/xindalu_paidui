@@ -4,11 +4,19 @@ import 'package:flutter/material.dart';
 
 class Paidui_history extends StatelessWidget {
   Widget build(BuildContext context) {
+    final data = [
+      new TimeSeriesSales(DateTime.parse("2012-02-27 13:27:00"), 5),
+      new TimeSeriesSales(DateTime.parse("2012-02-27 13:28:00"), 25),
+      new TimeSeriesSales(DateTime.parse("2012-02-27 13:29:00"), 25),
+      new TimeSeriesSales(DateTime.parse("2012-02-27 13:30:00"), 100),
+//    new TimeSeriesSales(DateTime.parse("2012-02-27 13:27:00"), 100),
+//    new TimeSeriesSales(DateTime.parse("2012-02-27 13:27:00"), 75),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text("历史数据"),
       ) ,
-      body: SimpleTimeSeriesChart.test(test()),
+      body: SimpleTimeSeriesChart.test(get_Series(data)),
     );
   }
 }
@@ -81,16 +89,7 @@ class TimeSeriesSales {
   TimeSeriesSales(this.time, this.sales);
 }
 
-test() {
-  final data = [
-    new TimeSeriesSales(new DateTime(2017, 9, 19), 5),
-    new TimeSeriesSales(new DateTime(2017, 9, 26), 25),
-    new TimeSeriesSales(new DateTime(2017, 9, 27), 25),
-    new TimeSeriesSales(new DateTime(2017, 10, 3), 100),
-    new TimeSeriesSales(new DateTime(2017, 10, 6), 100),
-    new TimeSeriesSales(new DateTime(2017, 10, 10), 75),
-  ];
-
+get_Series(List<TimeSeriesSales> data) {
   return [
     new charts.Series<TimeSeriesSales, DateTime>( //timeSeries还是一个数据的封装，
       // 内部有一个列表，封装真正的数据，
