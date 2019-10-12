@@ -22,5 +22,12 @@ void main() {
       var data = await Online.get(44443);
       print(jsonEncode(data.ResultObj["IsOnline"]));
     });
+
+    test("online是否在线上", () async {
+      await util_login();
+
+      var data = await Online.isOnline(44443);
+      print(data);
+    });
   });
 }

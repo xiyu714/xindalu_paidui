@@ -20,6 +20,10 @@ class Online with Common_response {
     return Online.fromJson(response.data);
   }
 
+  static Future<bool> isOnline(int deviceId) async {
+    return (await Online.get(deviceId)).ResultObj["IsOnline"];
+  }
+
   factory Online.fromJson(Map<String, dynamic> json) => _$OnlineFromJson(json);
   Map<String, dynamic> toJson() => _$OnlineToJson(this);
 }
