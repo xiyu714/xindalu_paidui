@@ -6,6 +6,7 @@ import 'dart:async';
  */
 import 'package:flutter/material.dart';
 import 'package:paidui_xitong/model/paidui.dart';
+import 'package:paidui_xitong/page/home.dart';
 import 'package:vibration/vibration.dart';
 
 class NowPaidui with ChangeNotifier {
@@ -34,7 +35,11 @@ class NowPaidui with ChangeNotifier {
                     new FlatButton(
                       child: new Text("取消"),
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.pushReplacement(context, MaterialPageRoute(
+                            builder: (context) {
+                              return Home();
+                            }
+                        ));
                       },
                     ),
                     new FlatButton(
