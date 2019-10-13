@@ -23,6 +23,7 @@ class NowPaidui with ChangeNotifier {
         this.paidui = await Paidui.post();
         if(this.paidui.ResultObj.Value <= 3 && paidui_tip) {
           Vibration.vibrate(duration: 1000);
+          timer.cancel(); // 在这里终止是有问题的
           showDialog(
               context: context,
               barrierDismissible: true,
