@@ -121,7 +121,6 @@ class T extends StatelessWidget {
             ),
           ),
         ),
-        SwitchAndCheckBoxTestRoute(),
 
       ],
     );
