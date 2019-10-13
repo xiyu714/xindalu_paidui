@@ -19,10 +19,17 @@ class _Home extends State<Home> {
       //Toast.toast(context, msg: "自动登录");
       print("test 自动tip");
     }
+    var back;
+    if(home_stop == true) {
+      back = Colors.grey;
+    } else {
+      back = Colors.white;
+    }
     return Scaffold(
         appBar: AppBar(
           title: Text("主页"),
         ),
+      backgroundColor: back,
       body: MultiProvider(
         providers: [
           ChangeNotifierProvider(builder: (_) {
@@ -108,6 +115,10 @@ class T extends StatelessWidget {
             child: OutlineButton(
               child: Text("查看排队最新进展"),
               onPressed: () {
+                if(home_stop == true) {
+                  Toast.toast(context, msg: "已放弃排队不能操作",position: ToastPostion.bottom);
+                  return;
+                }
                 Provider.of<NowPaidui>(context).run_once();
                 Toast.toast(context, msg: "更新成功",position: ToastPostion.bottom);
               },
@@ -121,6 +132,10 @@ class T extends StatelessWidget {
             child: OutlineButton(
               child: Text("查看历史数据"),
               onPressed: () {
+                if(home_stop == true) {
+                  Toast.toast(context, msg: "已放弃排队不能操作",position: ToastPostion.bottom);
+                  return;
+                }
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
                       return Paidui_history();
