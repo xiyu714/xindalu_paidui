@@ -95,7 +95,7 @@ class _Login extends State<Login> {
             Container(
               padding: EdgeInsets.only(top: 100, bottom: 10),
               child: Text(
-                'XIYU',
+                '智能排队系统',
                 style: TextStyle(
                     color: Color.fromARGB(255, 53, 53, 53),
                     fontSize: 50.0
