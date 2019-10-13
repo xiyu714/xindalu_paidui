@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:paidui_xitong/state/now_paidui.dart';
 import 'package:paidui_xitong/page/paidui_history.dart';
 import 'package:paidui_xitong/model/lock.dart';
+import 'package:paidui_xitong/page/tost.dart';
 
 class Home extends StatefulWidget {
   _Home createState() => _Home();
@@ -102,6 +103,7 @@ class T extends StatelessWidget {
               child: Text("查看排队最新进展"),
               onPressed: () {
                 Provider.of<NowPaidui>(context).run_once();
+                Toast.toast(context, msg: "更新成功",position: ToastPostion.bottom);
               },
             ),
           ),
