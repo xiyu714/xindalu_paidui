@@ -21,19 +21,26 @@ class NowPaidui with ChangeNotifier {
         timer.cancel();
       } else {
         this.paidui = await Paidui.post();
-        if(this.paidui.ResultObj.Value <= 3) {
+        if(this.paidui.ResultObj.Value <= 3 && paidui_tip) {
           Vibration.vibrate(duration: 1000);
           showDialog(
               context: context,
               barrierDismissible: true,
               builder: (BuildContext context) {
                 return AlertDialog(
-                  title: Text("登录错误"),
-                  content: Text("hello"),
+                  title: Text("提示"),
+                  content: Text("前面仅剩${this.paidui.ResultObj.Value}人，请立即到现场等待办理业务"),
                   shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   actions: <Widget>[
                     new FlatButton(
-                      child: new Text("取消"),
+                      child: new Text("取消提醒"),
+                      onPressed: () {
+                        paidui_tip = false;
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    new FlatButton(
+                      child: new Text("放弃排队"),
                       onPressed: () {
                         home_stop = true;
                         timer.cancel(); // 由于又到home页面，就会又启动一个新的timer
@@ -42,12 +49,6 @@ class NowPaidui with ChangeNotifier {
                               return Home();
                             }
                         ));
-                      },
-                    ),
-                    new FlatButton(
-                      child: new Text("确定"),
-                      onPressed: () {
-                        Navigator.of(context).pop();
                       },
                     ),
                   ],

@@ -3,3 +3,4 @@
 String AccessToken;
 bool autoLoginTip =false ;
 bool home_stop = false;
+bool paidui_tip = true;
