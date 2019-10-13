@@ -16,7 +16,8 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     if(autoLoginTip == true) {
       autoLoginTip = false;
-      Toast.toast(context, msg: "自动登录");
+      //Toast.toast(context, msg: "自动登录");
+      print("test 自动tip");
     }
     return Scaffold(
         appBar: AppBar(
