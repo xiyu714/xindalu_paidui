@@ -21,7 +21,7 @@ class NowPaidui with ChangeNotifier {
         timer.cancel();
       } else {
         this.paidui = await Paidui.post();
-        if(true) {
+        if(this.paidui.ResultObj.Value <= 3) {
           Vibration.vibrate(duration: 1000);
           showDialog(
               context: context,

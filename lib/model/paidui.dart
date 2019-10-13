@@ -19,7 +19,7 @@ class Paidui {
           "AccessToken": AccessToken,
         }
     ));
-    var response = await dio.get("http://api.nlecloud.com/devices/44443/sensors/count");
+    var response = await dio.get("http://api.nlecloud.com/devices/44443/sensors/number_up");
     //print(response);
     return Paidui.fromJson(response.data);
   }
@@ -53,7 +53,7 @@ class Paidui_history {
           "AccessToken": AccessToken,
         }
     ));
-    var response = await dio.get("http://api.nlecloud.com/devices/44443/datas?apitags=count", queryParameters: {
+    var response = await dio.get("http://api.nlecloud.com/devices/44443/datas?apitags=number_up", queryParameters: {
       "Method": 1,
       "TimeAgo": 60,  // 想设为5分钟，为了方便调试先设为60
     });
