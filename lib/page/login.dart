@@ -21,6 +21,7 @@ Future<Widget> login() async {
     if(response.Status == 0) {
       print("自动登录成功");
       AccessToken = response.ResultObj.AccessToken;
+      //autoLoginTip = true;
       return Home();
     } else {
       print(response.Msg);

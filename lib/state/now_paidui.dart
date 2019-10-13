@@ -5,19 +5,19 @@ import 'dart:async';
         3.停止更新数据
  */
 import 'package:flutter/material.dart';
+import 'package:paidui_xitong/global.dart';
 import 'package:paidui_xitong/model/paidui.dart';
 import 'package:paidui_xitong/page/home.dart';
 import 'package:vibration/vibration.dart';
 
 class NowPaidui with ChangeNotifier {
-  bool stop = false;
   Paidui paidui;
 
   run(BuildContext context) {
     const period = const Duration(seconds: 5);
 
     Timer.periodic(period, (timer) async {
-      if(this.stop) { //stop时取消更新
+      if(home_stop) { //stop时取消更新
         timer.cancel();
       } else {
         this.paidui = await Paidui.post();
@@ -35,6 +35,8 @@ class NowPaidui with ChangeNotifier {
                     new FlatButton(
                       child: new Text("取消"),
                       onPressed: () {
+                        home_stop = true;
+                        timer.cancel(); // 由于又到home页面，就会又启动一个新的timer
                         Navigator.pushReplacement(context, MaterialPageRoute(
                             builder: (context) {
                               return Home();

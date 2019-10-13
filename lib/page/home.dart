@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paidui_xitong/global.dart';
 import 'package:provider/provider.dart';
 import 'package:paidui_xitong/state/now_paidui.dart';
 import 'package:paidui_xitong/page/paidui_history.dart';
@@ -13,6 +14,10 @@ class _Home extends State<Home> {
   NowPaidui paidui = NowPaidui();
 
   Widget build(BuildContext context) {
+    if(autoLoginTip == true) {
+      autoLoginTip = false;
+      Toast.toast(context, msg: "自动登录");
+    }
     return Scaffold(
         appBar: AppBar(
           title: Text("主页"),
