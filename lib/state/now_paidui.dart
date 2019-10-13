@@ -9,6 +9,7 @@ import 'package:paidui_xitong/global.dart';
 import 'package:paidui_xitong/model/paidui.dart';
 import 'package:paidui_xitong/page/home.dart';
 import 'package:vibration/vibration.dart';
+import 'package:paidui_xitong/model/cmd.dart';
 
 class NowPaidui with ChangeNotifier {
   Paidui paidui;
@@ -45,6 +46,7 @@ class NowPaidui with ChangeNotifier {
                       onPressed: () {
                         home_stop = true;
                         timer.cancel(); // 由于又到home页面，就会又启动一个新的timer
+                        Cmd.post(44443, "number_down", 1);
                         Navigator.pushReplacement(context, MaterialPageRoute(
                             builder: (context) {
                               return Home();
