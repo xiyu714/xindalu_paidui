@@ -11,7 +11,7 @@ class NowPaidui with ChangeNotifier {
   bool stop = false;
   Paidui paidui;
 
-  run() {
+  run(BuildContext context) {
     const period = const Duration(seconds: 5);
 
     Timer.periodic(period, (timer) async {
@@ -19,6 +19,33 @@ class NowPaidui with ChangeNotifier {
         timer.cancel();
       } else {
         this.paidui = await Paidui.post();
+        if(true) {
+          showDialog(
+              context: context,
+              barrierDismissible: true,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text("登录错误"),
+                  content: Text("hello"),
+                  shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  actions: <Widget>[
+                    new FlatButton(
+                      child: new Text("取消"),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                    new FlatButton(
+                      child: new Text("确定"),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ],
+                );
+              }
+          );
+        }
         notifyListeners();
       }
     });

@@ -19,7 +19,7 @@ class _Home extends State<Home> {
       body: MultiProvider(
         providers: [
           ChangeNotifierProvider(builder: (_) {
-            paidui.run();
+            paidui.run(context);
             return paidui;
           },)
         ],
