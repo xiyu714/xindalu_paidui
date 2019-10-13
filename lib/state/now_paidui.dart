@@ -6,6 +6,7 @@ import 'dart:async';
  */
 import 'package:flutter/material.dart';
 import 'package:paidui_xitong/model/paidui.dart';
+import 'package:vibration/vibration.dart';
 
 class NowPaidui with ChangeNotifier {
   bool stop = false;
@@ -20,6 +21,7 @@ class NowPaidui with ChangeNotifier {
       } else {
         this.paidui = await Paidui.post();
         if(true) {
+          Vibration.vibrate(duration: 1000);
           showDialog(
               context: context,
               barrierDismissible: true,
