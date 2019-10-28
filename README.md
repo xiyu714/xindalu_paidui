@@ -1,6 +1,6 @@
 # paidui_xitong
 
-A new Flutter application.
+新大陆排队系统
 
 ## Getting Started
 
